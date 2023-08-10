@@ -4,12 +4,50 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Vite App</title>
   </head>
   <body>
-    <h1>Hola</h1>
-    <img src="./assets/images/cute-cat.webp" alt="" />
+    <div class="main-container">
+      <div class="card-image-container">
+        <picture>
+          <source media="(min-width:768px )" srcset="assets/images/image-header-desktop.jpg" />
+          <source media="(min-width:360px )" srcset="assets/images/image-header-mobile.jpg" />
+          <img src="assets/images/image-header-mobile.jpg" alt="image mobile" class="card-image" />
+        </picture>
+      </div>
+      <div class="card-info">
+        <h2 class="card-info__title">
+          Get <span class="card-info__feature"> insights </span> that help your business grow.
+        </h2>
+        <p class="card-info__text">
+          Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and
+          overall efficiency.
+        </p>
+        <div class="card-data">
+          <div class="card-companies">
+            <p class="card-data__number">10k+</p>
+            <p class="card-data__text">COMPANIES</p>
+          </div>
+
+          <div class="card-templates">
+            <p class="card-data__number">314</p>
+            <p class="card-data__text">TEMPLATES</p>
+          </div>
+
+          <div class="card-queries">
+            <p class="card-data__number">12M+</p>
+            <p class="card-data__text">QUERIES</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

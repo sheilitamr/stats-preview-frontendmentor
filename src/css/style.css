@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --background-color: #0a0c1c;
+  --card-background: #1b1937;
+  --text-featured: #ab5cdb;
+  --subtext-color: rgba(255, 255, 255, 0.69);
+}
 img {
   max-width: 100%;
   display: block;
@@ -22,6 +28,137 @@ a {
 }
 
 body {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+}
+
+.main-container {
+  width: 327px;
+  background-color: var(--card-background);
+  border-radius: 8px;
+}
+@media screen and (min-width: 768px) {
+  .main-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    width: 1110px;
+  }
+}
+
+.card-image-container {
+  position: relative;
+}
+.card-image-container::after {
+  border-radius: 8px 8px 0 0;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ab5cdb;
+  opacity: 0.3;
+}
+@media screen and (min-width: 768px) {
+  .card-image-container::after {
+    border-radius: 0 8px 8px 0;
+  }
+  .card-image-container {
+    width: 540px;
+    flex-shrink: 0;
+  }
+}
+.card-image {
+  border-radius: 8px 8px 0 0;
+  mix-blend-mode: multiply;
+}
+@media screen and (min-width: 768px) {
+  .card-image {
+    border-radius: 0 8px 8px 0;
+  }
+}
+
+.card-info {
+  padding: 0 31px;
+}
+@media screen and (min-width: 768px) {
+  .card-info {
+    padding: 0;
+    margin: 16px 95px 0 72px;
+  }
+}
+.card-info__title {
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .card-info__title {
+    font-size: 36px;
+    line-height: 44px;
+    text-align: left;
+  }
+}
+.card-info__feature {
+  color: var(--text-featured);
+}
+
+.card-info__text {
+  color: var(--subtext-color);
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .card-info__text {
+    text-align: left;
+    margin-bottom: 72px;
+  }
+}
+.card-data {
+  text-align: center;
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .card-data {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.card-companies,
+.card-templates,
+.card-queries {
+  margin-bottom: 24px;
+}
+
+.card-data__number {
   margin: 0;
-  background-image: url(../assets/images/sleep-cat.jpeg);
+  font-size: 24px;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .card-data__number {
+    text-align: left;
+    padding: 0;
+    margin-bottom: 2px;
+  }
+}
+.card-data__text {
+  color: var(--subtext-color);
+  font-family: 'Lexend Deca';
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  margin: 0;
 }
